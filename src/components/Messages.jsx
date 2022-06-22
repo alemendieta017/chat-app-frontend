@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from 'react'
+import React, { useEffect, useState, useContext, useRef } from 'react'
 import { DataProvider } from '../context/DataContext'
 import { getMessages } from '../services/fetch-api'
 import '../styles/Message.css'
@@ -6,6 +6,7 @@ import '../styles/Message.css'
 const Messages = () => {
   const [messages, setMessages] = useState([])
   const { socket, user } = useContext(DataProvider)
+  const messagesEndRef = useRef(null)
 
   useEffect(async () => {
     setMessages(await getMessages())
@@ -13,6 +14,7 @@ const Messages = () => {
     socket.on('update', (data) => {
       console.log('updated messages on client')
       setMessages((messages) => [...messages, data])
+      messagesEndRef.current.scrollIntoView({ behavior: 'smooth' })
     })
   }, [])
 
@@ -32,7 +34,12 @@ const Messages = () => {
       </p>
     )
   })
-  return <div className="message-area">{messageList}</div>
+  return (
+    <div className="message-area">
+      {messageList}
+      <div ref={messagesEndRef} />
+    </div>
+  )
 }
 
 export default Messages
