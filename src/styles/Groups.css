@@ -1,0 +1,29 @@
+.groups-container {
+  grid-row-start: 1;
+  grid-row-end: 3;
+  background-color: #088aff;
+}
+
+.msg-bienvenida {
+  height: auto;
+  color: #424949;
+  background-color: #fff;
+  margin: 1rem 0.5rem;
+  padding: 1.5rem 0.5rem;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.group {
+  height: auto;
+  color: #424949;
+  background-color: #fff;
+  margin: 1rem 0.5rem;
+  padding: 1.5rem 0.5rem;
+  border-radius: 1rem;
+}
+
+.group h2 {
+  color: #700955;
+  font-size: 0.8rem;
+}

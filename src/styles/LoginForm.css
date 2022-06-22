@@ -1,0 +1,48 @@
+.login-container {
+  position: fixed;
+  justify-self: center;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  background-color: #df0056;
+  padding: 5rem;
+  border-radius: 15px;
+}
+
+.errorMsg {
+  color: #e74c3c;
+  background-color: #fff;
+  border-radius: 15px;
+  margin-bottom: 1rem;
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.form p {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.form input {
+  display: inline-block;
+  padding: 10px;
+}
+
+.form button {
+  margin-top: 1rem;
+  padding: 10px;
+  color: #fff;
+  background-color: #088aff;
+  border: none;
+  border-radius: 2px;
+}

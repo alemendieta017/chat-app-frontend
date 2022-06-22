@@ -1,0 +1,9 @@
+.input-area {
+  display: grid;
+  grid-template-columns: 88% 1fr;
+  grid-column: 2 / 3;
+}
+
+.input-text {
+  width: auto;
+}
