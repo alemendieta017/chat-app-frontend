@@ -1,7 +1,8 @@
 import React, { createContext, useState } from 'react'
 import io from 'socket.io-client'
+import { API_URL } from '../config'
 
-const socket = io('http://localhost:3000', { withCredentials: true })
+const socket = io(API_URL, { withCredentials: false })
 
 const DataProvider = createContext()
 
@@ -12,12 +13,8 @@ const DataContext = ({ children }) => {
     id: null,
   })
 
-  const [currentChat, setCurrentChat] = useState(null)
-
   return (
-    <DataProvider.Provider
-      value={{ user, setUser, socket, currentChat, setCurrentChat }}
-    >
+    <DataProvider.Provider value={{ user, setUser, socket }}>
       {children}
     </DataProvider.Provider>
   )

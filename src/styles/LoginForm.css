@@ -46,3 +46,13 @@
   border: none;
   border-radius: 2px;
 }
+
+@media (max-width: 600px) {
+  .login-container {
+    padding: 5rem 2rem;
+  }
+
+  .form {
+    font-size: 1.5rem;
+  }
+}

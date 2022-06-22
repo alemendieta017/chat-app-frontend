@@ -5,20 +5,26 @@ import '../styles/Message.css'
 
 const Messages = () => {
   const [messages, setMessages] = useState([])
-  const { socket, user, currentChat } = useContext(DataProvider)
+  const { socket, user } = useContext(DataProvider)
 
   useEffect(async () => {
     setMessages(await getMessages())
 
     socket.on('update', (data) => {
       console.log('updated messages on client')
-      console.log(data)
-      console.log(currentChat)
       setMessages((messages) => [...messages, data])
     })
   }, [])
 
   let messageList = messages.map((message) => {
+    if (message.user === user.username) {
+      return (
+        <p className="message owner" key={message._id}>
+          <span>{message.user}: </span>
+          {message.message}
+        </p>
+      )
+    }
     return (
       <p className="message" key={message._id}>
         <span>{message.user}: </span>

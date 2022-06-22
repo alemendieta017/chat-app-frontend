@@ -1,8 +1,9 @@
 const axios = require('axios')
+const { API_URL } = require('../config.js')
 
 async function getMessages(chatId) {
   try {
-    const response = await axios.get('http://localhost:3000/message/')
+    const response = await axios.get(`${API_URL}message`)
     return response.data.body
   } catch (error) {
     console.error(error)
@@ -11,7 +12,7 @@ async function getMessages(chatId) {
 
 async function getChatList(userId) {
   try {
-    const response = await axios.get('http://localhost:3000/chat/', { userId })
+    const response = await axios.get(`${API_URL}chat`)
     return response
   } catch (error) {}
 }
@@ -23,7 +24,7 @@ async function addMessage(userId, message) {
     message,
   }
   try {
-    const response = await axios.post('http://localhost:3000/message', data)
+    const response = await axios.post(API_URL + 'message', data)
     return response
   } catch (err) {
     console.log(err)

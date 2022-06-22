@@ -1,8 +1,9 @@
 import axios from 'axios'
+import { API_URL } from '../config'
 
 async function login(username, password) {
   try {
-    const response = await axios.post('http://localhost:3000/auth/login', {
+    const response = await axios.post(API_URL + 'auth/login', {
       username,
       password,
     })
@@ -13,7 +14,7 @@ async function login(username, password) {
 }
 async function register(username, password) {
   try {
-    const response = await axios.post('http://localhost:3000/user', {
+    const response = await axios.post(API_URL + '/user', {
       username,
       password,
     })

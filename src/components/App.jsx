@@ -3,6 +3,9 @@ import Layout from './Layout'
 import { DataContext } from '../context/DataContext'
 
 const App = () => {
+  useEffect(() => {
+    document.title = 'Chat App'
+  }, [])
   return (
     <DataContext>
       <Layout />

@@ -26,4 +26,11 @@
 .group h2 {
   color: #700955;
   font-size: 0.8rem;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .groups-container {
+    display: none;
+  }
 }

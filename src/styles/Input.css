@@ -7,3 +7,11 @@
 .input-text {
   width: auto;
 }
+
+@media (max-width: 600px) {
+  .input-area {
+    grid-template-columns: 70 1fr;
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+  }
+}

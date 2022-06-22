@@ -24,7 +24,7 @@ const Groups = () => {
             key={chat._id}
           >
             <h2>Chat General</h2>
-            <p>Cant. Integrantes {chat.users.length}</p>
+            {/* <p>Cant. Integrantes {chat.users.length}</p> */}
           </div>
         )
       })}
