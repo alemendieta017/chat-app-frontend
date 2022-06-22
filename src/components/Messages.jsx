@@ -10,7 +10,7 @@ const Messages = () => {
 
   useEffect(async () => {
     setMessages(await getMessages())
-
+    messagesEndRef.current.scrollIntoView({ behavior: 'smooth' })
     socket.on('update', (data) => {
       console.log('updated messages on client')
       setMessages((messages) => [...messages, data])
